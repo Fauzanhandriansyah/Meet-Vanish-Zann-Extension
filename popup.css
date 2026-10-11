@@ -1,0 +1,224 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bg-main: #0c0e12;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(255, 255, 255, 0.15);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --accent-color: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+body { 
+  width: 320px; 
+  margin: 0; 
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+main { 
+  padding: 20px; 
+}
+
+header { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 20px; 
+}
+
+header img { 
+  border-radius: 8px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+h1 { 
+  margin: 0; 
+  font-size: 15px; 
+  font-weight: 700;
+  letter-spacing: -0.01em; 
+  color: var(--text-primary);
+}
+
+header p { 
+  margin: 2px 0 0; 
+  color: var(--text-secondary); 
+  font-size: 11px; 
+  font-weight: 400;
+}
+
+.switch-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.switch-row:hover {
+  border-color: var(--card-border-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.switch-row strong, 
+.switch-row small { 
+  display: block; 
+}
+
+.switch-row strong { 
+  font-size: 13px; 
+  font-weight: 600;
+}
+
+.switch-row small { 
+  max-width: 180px; 
+  margin-top: 3px; 
+  color: var(--text-secondary); 
+  font-size: 11px; 
+  line-height: 1.35; 
+}
+
+.switch-row input { 
+  position: absolute; 
+  right: 14px; 
+  width: 1px; 
+  height: 1px; 
+  opacity: 0; 
+}
+
+.switch {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 22px;
+  border-radius: 99px;
+  background: #272a34;
+  transition: background-color 0.2s ease;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.switch-row input:checked + .switch { 
+  background: var(--accent-color); 
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.switch-row input:checked + .switch::after { 
+  transform: translateX(16px); 
+}
+
+.switch-row input:focus-visible + .switch { 
+  outline: 2px solid #818cf8; 
+  outline-offset: 2px; 
+}
+
+.notice { 
+  min-height: 14px; 
+  margin: 8px 4px 0; 
+  color: var(--text-secondary); 
+  font-size: 11px; 
+}
+
+.notice.error { 
+  color: #f87171; 
+}
+
+.howto { 
+  margin-top: 16px; 
+  padding: 14px 16px; 
+  border-radius: 12px; 
+  background: var(--card-bg); 
+  border: 1px solid var(--card-border);
+}
+
+.howto h2 { 
+  margin: 0 0 10px; 
+  font-size: 11px; 
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.howto ol { 
+  margin: 0; 
+  padding-left: 16px; 
+  color: #d1d5db; 
+  font-size: 11px; 
+  line-height: 1.6; 
+}
+
+.howto b { 
+  color: #ffffff; 
+  font-weight: 600; 
+}
+
+.meet-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 11px 16px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.08);
+  color: #a5b4fc;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.meet-link .arrow {
+  transition: transform 0.2s ease;
+}
+
+.meet-link:hover { 
+  background: rgba(99, 102, 241, 0.16); 
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #ffffff;
+}
+
+.meet-link:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+footer { 
+  margin-top: 16px; 
+  color: #6b7280; 
+  text-align: center; 
+  font-size: 10px; 
+  letter-spacing: 0.02em;
+}
+
+kbd { 
+  padding: 2px 6px; 
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: 4px; 
+  background: rgba(255, 255, 255, 0.04);
+  color: #d1d5db; 
+  font-family: inherit;
+  font-size: 10px; 
+}
